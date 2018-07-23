@@ -1,0 +1,43 @@
+<div *ngIf="dataCtrl.mode.home && !loading">
+  <div class="row" style="margin-top:10px; margin-bottom:30px;text-align:center;">
+
+    <div class="container-fluid" style="border-style: solid; margin: 50px;">
+      <table class="table tbl-stl table-sm" border="1" style="width: 100%; text-align: left">
+        <thead class="thead-inverse">
+          <tr class="hd-clpse" >
+            <th style="width: 35%;" class="tbl-hd-stl">
+              Title
+            </th>
+            <th style="width: 60%;" class="tbl-hd-stl">
+              Description
+            </th>                    
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tbl-row" *ngFor="let comic of data">
+            <td class="longtext">{{ comic.title }}</td>
+            <td class="longtext">{{ comic.description }}</td>
+            <td style="border-right: none;" class="end-col">
+              <div>
+                <button (click)="viewDetails(comic)" class="btn btn-primary btn-sm"><i class="fa fa-list"></i></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row" *ngIf="loading" style="text-align:center; margin-top:100px;">
+  <div class="col-md-12">
+    <i class="fa fa-spinner fa-spin" style="font-size:100px"></i>
+    <p>loading...</p>
+  </div>
+</div>
+
+
+
+  
